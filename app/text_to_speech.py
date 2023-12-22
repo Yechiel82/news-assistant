@@ -3,7 +3,6 @@ from openai import OpenAI
 
 import sys
 
-def text_to_speech(text, speech_file_path):
 def text_to_speech(text, speech_file_path=None):
     default_path = Path(__file__).parent / "speech.mp3"
     client = OpenAI()
