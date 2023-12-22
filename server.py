@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 from app.app import ping, perform
 
 from dotenv import load_dotenv
@@ -11,7 +12,9 @@ app = FastAPI()
 
 @app.get('/')
 async def read_root():
-    return {"message": perform()}
+    with open('index.html', 'r') as f:
+        html_content = f.read()
+    return HTMLResponse(content=html_content)
 
 @app.get('/ping')
 async def read_ping():
