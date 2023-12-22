@@ -4,8 +4,10 @@ from openai import OpenAI
 import sys
 
 def text_to_speech(text, speech_file_path):
-    client = OpenAI()
+def text_to_speech(text, speech_file_path=None):
     default_path = Path(__file__).parent / "speech.mp3"
+    client = OpenAI()
+    speech_file_path = speech_file_path or default_path
     response = client.audio.speech.create(
         model="tts-1",
         voice="alloy",
