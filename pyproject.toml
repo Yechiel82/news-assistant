@@ -9,6 +9,8 @@ readme = "README.md"
 python = "^3.11"
 langchain = "^0.0.352"
 openai = "^1.6.1"
+fastapi = "^0.78.0"
+uvicorn = "^0.17.6"
 
 
 [build-system]
